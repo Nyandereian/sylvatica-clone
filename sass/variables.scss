@@ -1,0 +1,119 @@
+$breakpoints: (
+  'sm': ( min-width: 480px ),
+  'md': ( min-width: 768px ),
+  'lg': ( min-width: 992px ),
+  'xl': ( min-width: 1200px )
+) !default;
+
+@mixin respond-above($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    @media #{inspect($breakpoint-value)} {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:500&display=swap);
+@mixin nav-font {
+  color: rgb(49, 49, 49);
+  font-family: 'Roboto', sans-serif;
+  font-size: .92em;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding-bottom: 8px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover {
+    border-bottom: 2px solid black;
+    color: rgb(119, 119, 119);
+  }
+}
+
+@mixin header-font {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: calc(1em + 1.1 * (100vw - 20em) / 40);
+  font-weight: 700;
+  line-height: 1.25em;
+}
+
+@mixin header-wrap {
+  background-color: rgb(38, 175, 31);
+  margin-bottom: 30px;
+  margin-top: 30px;
+  padding: 10px 0;
+  text-align: center;
+  @include header-font;
+}
+
+@mixin h3-font {
+  color: rgb(48, 49, 51);
+  font-family: 'Roboto', sans-serif;
+  font-size: calc(1em + 0.75 * (100vw - 20em) / 40);
+  font-weight: 700;
+  line-height: 1.25em;
+  margin: 25px auto 8px auto;
+}
+
+@mixin body-font {
+  color: rgb(68, 68, 68);
+  font-family: 'Helvetica', sans-serif;
+  font-size: 1em;
+  line-height: 1.65em;
+  margin-bottom: 1em;
+  margin-top: 1.25em;
+}
+
+@mixin activity-font {
+  color: white;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 40px;
+  font-weight: 100;
+  line-height: 40px;
+  letter-spacing: -1px;
+  padding-bottom: 16px;
+  padding-left: 20px;
+  text-align: left;
+  width: 40%;
+}
+
+@mixin quote-font {
+  color: rgb(68, 68, 68);
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 35px;
+  text-align: left;
+}
+
+@mixin footer-font {
+  color: white;
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 100;
+  line-height: 1.5;
+  a {
+    color: white;
+    text-decoration: none;
+
+  }
+}
+
+@mixin credits-font {
+  color: rgb(119, 119, 119);
+  font-family:'Helvetica', sans-serif;
+  font-weight: 100;
+  line-height: 1.6em;
+  letter-spacing: 1px;
+  a {
+    color: rgb(119, 119, 119);
+    text-decoration: none;
+    &:hover {
+      color: white;
+    }
+  }
+}

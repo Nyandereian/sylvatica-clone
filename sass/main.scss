@@ -1,0 +1,136 @@
+.main {
+  padding-bottom: 40px;
+}
+
+.head-wrap {
+  @include header-wrap;
+}
+
+.activities-row {
+  justify-content: space-between;
+}
+
+.activities {
+  width: 100%;
+  @include respond-above('md') {
+    width: auto;
+  }
+
+  h3 {
+    @include h3-font;
+  }
+
+  p {
+    @include body-font;
+  }
+
+  &:first-child {
+    text-align: center;
+  }
+}
+
+.body {
+  @include body-font;
+  a {
+    color: rgb(38, 206, 97);
+    &:hover {
+      color: rgb(35, 188, 89);
+      cursor: pointer;
+    }
+  }
+}
+
+.activity {
+  background-size: cover;
+  height: 200px;
+  margin-bottom: 30px;
+  position: relative;
+
+  h3 {
+    @include activity-font;
+    bottom: 10px;
+    left: 10px;
+    position: absolute;
+  }
+}
+
+#bushcraft {
+  background-image: url('media/bushcraft.jpg');
+}
+
+#schot {
+  background-image: url('media/schot.jpg');
+  background-position: center;
+}
+
+#borrel {
+  background-image: url('media/borrel.jpg');
+}
+
+.sylvatica {
+  @include respond-above('md') {
+    margin: 0 50px;
+  }
+}
+
+.about-wrap {
+  @include respond-above('md') {
+    max-width: 55%;
+    position: relative;
+  }
+}
+
+.about {
+  @include respond-above('md') {
+    position: absolute;
+    text-align: left;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.big-logo {
+  height: 100%;
+  max-width: 30%;
+  text-align: center;
+  img {
+    display: inline-block;
+    height: 300px;
+    max-width: 100%;
+    padding: 0 15px;
+  }
+  @include respond-above('md') {
+    max-width: 30%;
+  }
+}
+.quotes {
+  @include respond-above('md') {
+    max-width: 30%;
+  }
+}
+
+.quote {
+  @include quote-font;
+  margin-top: 30px;
+  padding-left: 20px;
+}
+
+.sponsors {
+  align-content: center;
+  padding: 0 15px;
+  text-align: center;
+
+  div {
+    @include respond-above('md') {
+      max-width: 30%;
+    }
+  }
+
+  img {
+    @include respond-above('md') {
+      max-width: 100%;
+    }
+
+    width: 300px;
+  }
+}
